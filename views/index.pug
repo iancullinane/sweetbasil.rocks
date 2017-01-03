@@ -1,0 +1,18 @@
+
+extends layout
+include track
+
+block content
+  #app2
+  #app
+  // This adds the data as an object in client for dev purposes
+  script(type="text/javascript").
+    var data = !{JSON.stringify(data)};
+
+  //  if data
+  //  for track in data.recenttracks.track
+  //    +track(track)
+
+block side
+  .box
+    h1#title Sweet Basil Radio

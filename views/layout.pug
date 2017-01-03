@@ -1,0 +1,31 @@
+//include mixins
+
+//include mixins/body-mixins
+
+doctype
+html
+  head
+    title #{config.title} | Music
+    include includes/meta
+
+  body
+    #size-check
+      .dbg Query:
+    #main
+      #side
+        block side
+      #content
+        block content
+
+    //- Scripts that can wait
+    script(src='/js/include.js')
+    script#__bs_script__.
+      //<![CDATA[
+      document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.2'><\\/script>".replace("HOST", location.hostname));
+      //]]>
+
+  footer
+    .container
+      .row
+        .col-sm-12
+          p copyright Ian Cullinane 2015

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700,300|Work+Sans:400,200');
+
+//@import 'nib'
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  margin 0 0 0 0
+  padding none
+
+
+/*
+ * Store the main color and
+ * background color as variables
+ */
+main-color = #4998F2
+background-color = #faf9f0
+
+color1 = #1184B2; //rgba(234, 242, 227, 100)
+color2 = #4ACBFF; //rgba(97, 232, 225, 100)
+color3 = #31C3FF; //rgba(242, 87, 87, 100)
+color4 = #B25F00; //rgba(242, 232, 99, 100)
+color5 = #FF9E31; //rgba(242, 205, 96, 100)
+
+colors = ( #1184B2 #4ACBFF #31C3FF #B25F00 #FF9E31 )
+
+//-var colors = new Array("#114B3A","#336D2B","#DCB549","#E2622E","#CF4222");
+
+
+roboto = 'Roboto Slab', serif
+work-sans = 'Work Sans', sans-serif
+archive = 'archive-tilt'
+
+@font-face {
+    font-family: 'archive-tilt'; /*a name to be used later*/
+    src: url('../fonts/archive-tilt.otf'); /*URL to font*/
+}
+
+
+small = 'screen and (max-width: 480px)'
+medium = 'screen and (min-width: 481px) and (max-width: 768px)'
+large = 'screen and (min-width: 769px) and (max-width: 1200px)'
+xlarge = 'screen and (min-width: 1201px)'
+
+
+check-sm-min = 'screen and (max-width: 300px)'
+check-md-min = 'screen and (max-width: 600px)'
+check-lg-min = 'screen and (max-width: 900px)'
+check-xlg-min = 'screen and (max-width: 1200px)'
+
+#size-check
+  height 20px
+  padding 5px
+
+  @media small
+    background-color: red
+    .dbg::after
+      content: "small"
+  @media medium
+    background-color: lightblue
+    .dbg::after
+      content: "medium"
+  @media large
+    background-color: green
+    .dbg::after
+      content: "large"
+
+  @media xlarge
+    .dbg::after
+      content: "xlarge"
+    background-color: orange
+
+
+
+
+
+ul, li
+  list-style-type none;
+
+body, html
+  margin 0
+  height 100%
+  //background-color color3
+  background-image url('../images/bg4.png')
+  background-attachment fixed
