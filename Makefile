@@ -4,6 +4,7 @@
 run:
 	npm start
 
+# browser-sync start --proxy "localhost:8888" --serveStatic 'public' --files 'public'
 sync: run
 	browser-sync start -p localhost:8888 --files 'views'
 

@@ -54,10 +54,11 @@ function index(){
     <Track track={obj} key={_.uniqueId("track-" + i)}/>
   )
 
-  const listTest = <TrackList list={tracksList}/>
+  // A track list to render
+  //const indexRouteTrackList = <TrackList list={tracksList}/>
   ReactDOM.render(
-    listTest,
-    document.getElementById('app2')
+    <TrackList list={tracksList}/>,
+    document.getElementById('app')
   );
 
 };

@@ -1,7 +1,7 @@
 
 
 import request from 'request';
-import query from 'query-string'
+import query from 'query-string';
 
 var lastfmUrl = 'http://ws.audioscrobbler.com/2.0/?';
 
@@ -50,6 +50,21 @@ class LastFmAPI{
   getRecentTracks(callback){
     let options = options_get_recent;
     options.limit = 10;
+    options.method = "user.getRecentTracks";
+    request(this.buildUrl(options), (err, res, body) => {
+      if (!err && res.statusCode == 200) {
+        let r_value = JSON.parse(res.body);
+        callback(r_value, err);
+      } else {
+        callback("No Data", "Error")
+      };
+    });
+  }
+
+  getRecentTracksByPage(page, callback){
+    let options = options_get_recent;
+    options.limit = 10;
+    options.page = page;
     options.method = "user.getRecentTracks";
     request(this.buildUrl(options), (err, res, body) => {
       if (!err && res.statusCode == 200) {
