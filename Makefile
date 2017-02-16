@@ -2,12 +2,10 @@
 
 
 run:
-	npm start 
+	npm start
 
 sync: run
 	browser-sync start -p localhost:8888 --files 'views'
-
-
 
 client: copy
 	stylus -u nib views/styles/style.styl -o public/css/style.css
