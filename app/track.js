@@ -43,9 +43,11 @@ export default class Track extends Component {
   }
 
   _artist_info_toggle(){
-    lastfm.getArtistByID((returned)=>{
+    console.log(this.props.track)
+    lastfm.getArtistByID(this.props.track.artist.mbid, (returned)=>{
       console.log(returned);
-      if (!this.state.artist_more){
+      //console.log(returned);
+      if(!this.state.artist_more){
         this.setState({artist_more: returned.artist.bio.summary});
       } else {
         this.setState({artist_more: ""});

@@ -10,16 +10,15 @@ var lastfmUrl = 'http://ws.audioscrobbler.com/2.0/?';
 var options_get_recent = {
   method: "user.getRecentTracks",
   limit: "10",
-  user: 'ianpants',
-  api_key: "57ee3318536b23ee81d6b27e36997cde",
+  user: '<user>',
+  api_key: "<key>",
   format: "json"
 };
 
 var options_get_artist = {
   method: "artist.getInfo",
-  user: 'ianpants',
-  api_key: "57ee3318536b23ee81d6b27e36997cde",
-  mbid: "cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c",
+  user: '<user>',
+  api_key: "<key>",
   format: "json"
 
 };
@@ -35,8 +34,9 @@ class LastFmAPI{
     console.log("test");
   }
 
-  getArtistByID(callback){
+  getArtistByID(id, callback){
     let options = options_get_artist;
+    options.mbid = id;
     request(this.buildUrl(options), (err, res, body) => {
       if (!err && res.statusCode == 200) {
         let r_value = JSON.parse(res.body);

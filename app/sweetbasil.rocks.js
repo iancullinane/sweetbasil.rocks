@@ -13,8 +13,6 @@ import ReactDOM from 'react-dom';
 */
 import {ui} from './display.js';
 
-
-
 /*
 	Set up window for DOM manipulation and bootstrap
 	TODO possibly remove completely, use templates and native DOM calls
