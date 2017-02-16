@@ -13,5 +13,38 @@ block content
   //    +track(track)
 
 block side
+
   .box
-    h1#title Sweet Basil Radio
+    +titleColors("Sweet Basil Radio")
+
+    //h1#title Sweet Basil Radio
+    button#more_info(class='btn more-btn') more info
+
+  #info
+    .info--box
+      h4 Playlist Link
+      h2 #[a(href="https://open.spotify.com/user/sarahstretch/playlist/1BY41M2fUcO1Idh0v0aYiC") Sweet Basil]
+
+    .info--box
+      h2 Sweet Basil Radio
+      p
+        | Welcome to Sweet Basil, or maybe not. Browse tracks recently played. More features coming soon, leave any feedback at #[a(href="mailto:ian@iancullinane.com") ian@iancullinane.com]
+
+    .info--side_art
+      h2 Missing Album Covers
+      p
+        | Sometimes we won't have the album cover art. It happens. When it does you'll see this instead. It's pretty sweet.
+      br
+      //h4 #{config.df_image.title}
+      img(src="images/cassette_tape_pixel.png", alt="pretty....sweet")
+      //p #{config.df_image.medium}
+      //h6 #{config.df_image.artist} (#[a(href="#{link}") #{config.df_image.artist}])
+
+
+
+mixin titleColors(text)
+  -var message = text;
+  -var colors = new Array("#114B3A","#336D2B","#DCB549","#E2622E","#CF4222"); // red, green, blue
+  h1#title
+    -for (var i = 0; i < message.length; i++)
+      span(style="color:" + colors[Math.floor((Math.random() * colors.length))] + ";")= message[i]

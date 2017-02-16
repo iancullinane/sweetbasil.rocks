@@ -63,6 +63,7 @@ class LastFmAPI{
 
   getRecentTracksByPage(page, callback){
     let options = options_get_recent;
+    console.log("getting page: " + page);
     options.limit = 10;
     options.page = page;
     options.method = "user.getRecentTracks";

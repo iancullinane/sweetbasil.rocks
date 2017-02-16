@@ -1,5 +1,6 @@
 
-
+NAME=sweetbasil.rocks
+IMAGE=eignhpants/${NAME}
 
 run:
 	npm start
@@ -18,3 +19,8 @@ watch:
 
 copy:
 	-cp node_modules/bootstrap/dist/css/bootstrap.min.css public/css/bootstrap.min.css
+
+tag-docker:
+	docker build --no-cache -t ${IMAGE} .
+	docker tag ${IMAGE}:latest ${IMAGE}:stable
+	docker push ${IMAGE}:stable

@@ -35,10 +35,9 @@ class Track extends Component {
 
 
   _artist_info_toggle(){
-   console.log("Retrieve: " + this.state.track)
    lastfm.getArtistByID(this.props.track.artist.mbid, (returned)=>{
      if(!this.state.artist_more){
-       this.setState({artist_more: [this.props.track.artist['#text'],returned.artist.bio.summary]});
+       this.setState({artist_more: [this.props.track.artist['#text'], returned.artist.bio.summary] });
      } else {
        this.setState({artist_more: ""});
      }
