@@ -37,6 +37,7 @@ if(window.location.pathname === '/'){
 } else if(window.location.pathname === '/config') {
   //console.log("/config route")
   index();
+  showInfo();
 }
 
 /*
@@ -63,9 +64,19 @@ function index(){
 
 };
 
-function someClick(){
-  console.log("Some click")
-}
+var more_info = document.getElementById("more_info");
+more_info.addEventListener('click', ()=> {
+  let info_div = document.getElementById("info");
+  info_div.style.display = info_div.style.display !== 'block' ? 'block' : "none";
+})
+
+
+
+//
+//function showInfo(){
+//
+//  console.log("From function")
+//}
 
 
 /*

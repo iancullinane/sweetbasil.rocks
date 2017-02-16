@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import _ from 'underscore';
 import {lastfm} from '../routes/lastfm';
 import Track from './track.js';
+
+
 export default class TrackList extends Component {
 
   constructor(props){
@@ -12,31 +14,37 @@ export default class TrackList extends Component {
       page: 1,
       tracks: this.props.list,
     }
+    console.log("Rendering page: " + this.state.page);
   }
 
-  _setTracks(obj){
-    this.setState({tracks: obj});
+  _setTracks(toAppend){
+    const newTracks = _.union(this.state.tracks, toAppend)
+    this.setState({tracks: newTracks});
+  }
+
+  _incrementPage(){
+    this.setState({page: this.state.page + 1}, this._getMoreTracks);
   }
 
   _getMoreTracks(){
-    console.log(this.state)
-    this.setState({page: this.state.page + 1});
-
     lastfm.getRecentTracksByPage(this.state.page, (returned)=>{
-      const tracks = returned.recenttracks.track
-      let tracksList = _.map(tracks, (obj, i) =>
+      let moreTracks = returned.recenttracks.track;
+      moreTracks.splice(0,1);
+      const tracks =  _.map(moreTracks, (obj, i) =>
         <Track track={obj} key={_.uniqueId("track-" + i)}/>
       )
-
-      this._setTracks(tracksList);
+      this._setTracks(tracks);
     });
   }
 
   render() {
     return (
       <div>
-        <div>{this.state.tracks}</div>
-        <button className='btn more-btn' onClick={()=>this._getMoreTracks()}>more</button>
+        <div id="trackRiver">{this.state.tracks}</div>
+        <button className='btn more-btn' onClick={()=>this._incrementPage()}>more tracks</button>
+        {/*<div className='btn more-btn'>{this.state.page}</div>}
+        {<button className='btn more-btn' onClick={()=>this._incrementPage()}>+</button>*/}
+
       </div>
     )
   }

@@ -37,7 +37,7 @@ export class ArtistInfo extends Component {
   render(){
     return (
       <div className='track--info'>
-        <p>{this.props.bio[1]}</p>
+        <div dangerouslySetInnerHTML={{__html: this.props.bio[1]}} />
       </div>
     )
   }

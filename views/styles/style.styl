@@ -6,6 +6,9 @@
   padding 5px
   margin 10px
   box-shadow 0 5px 7px #aaa
+  display flex
+  flex-direction: column
+  justify-content: center
 
 
 
@@ -42,6 +45,29 @@
 
 #content
   flex 5 1
+
+
+#info
+
+  h2,
+  h4
+    font-family: roboto
+
+  p
+    font-family: work-sans
+  display: none
+
+.info--box
+  @extend .box
+
+.info--side_art
+  @extend .box
+
+  img
+    width: 50%
+    align-self: center
+    padding 15px 0 15px
+
 
 
 /*
