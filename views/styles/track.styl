@@ -1,44 +1,13 @@
 
-// Meta object to be extended
-.track__text
-  .track--title
-    font-family: roboto
-    margin-bottom 3px
 
-  .track--artist
-    font-family work-sans
-    @media small { font-size: 5vw}
-    @media medium { font-size: 3vw}
 
-  .track--time
-    font-family: roboto
+//
+//
+//___________________________
 
-.btn-track
-  height 3em
-  background-color: #CF4222;
-  color white
-  font-family: roboto;
-  font-size: 20px;
-  align-content: flex-end;
 
-.current
-  @extend.box
-  font-size: 6vw
-  font-family: roboto
-
-  @media medium { font-size: 3vw}
-  @media large { font-size: 3vw}
-
-.past
-  @extend.box
-  font-size: 6vw
-  font-family: roboto
-
-  @media medium { font-size: 3vw}
-  @media large { font-size: 4vw}
 
 .track
-  @extend.track__text
   @extend.box
   display flex
   flex-direction column
@@ -49,18 +18,49 @@
   @media xlarge { flex-direction: row}
 
 
+.track--image
+  width 25%
+  @media small { width: 100%}
+
+  img
+    width 100%
+    padding 5px
+    float left
+
 .track--info
   flex 1 1
   //width: 100%
+  .track--title
+    font-family: roboto
+    margin-bottom 3px
+    @media small { font-size: 7vw}
+    @media medium { font-size: 6vw}
+    @media xlarge { font-size: 3vw}
 
+  .track--artist
+    font-family work-sans
+    @media small { font-size: 5vw}
+    @media medium { font-size: 3vw}
 
-.track--meta
-  flex 5 1
+  .track--time
+    font-family: roboto
 
-.track--link
-  flex 0 1 10%
-  align-self: flex-end
+.track--btns
+  display: flex
+  align-items: flex-end
   justify-content: flex-end
+
+.btn-track
+  margin-bottom: 3px
+  background-color: #CF4222;
+  color white
+  font-family: roboto;
+  font-size: 20px;
+
+  //@media small { width: 50%}
+
+
+
 
 .artistLink
   width: 100%
@@ -74,14 +74,44 @@
 
 
 
-.track--image
-  width 25%
-  @media small { width: 100%}
+.track--meta
+  flex 5 1
 
-  img
-    width 100%
-    padding 5px
-    float left
+.track--link
+  flex 0 1 10%
+  align-self: flex-end
+  justify-content: flex-end
+
+
+
+
+
+
+
+//
+//
+//___________________________
+
+
+.current
+  @extend.box
+  font-size: 8vw
+  font-family: roboto
+
+  @media medium { font-size: 3vw}
+  @media large { font-size: 3vw}
+  @media xlarge { font-size: 3vw}
+
+.past
+  @extend.box
+  font-size: 8vw
+  font-family: roboto
+
+  @media medium { font-size: 3vw}
+  @media large { font-size: 4vw}
+  @media xlarge { font-size: 3vw}
+
+
 
 .clearfix::before,
 .clearfix::after {

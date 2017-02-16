@@ -1,15 +1,15 @@
-
-
-//h2.current Current Track
-.track.nowPlaying
-  .track--image
-    if track.image[3]['#text']
-      img(src=track.image[3]['#text'])
-    else
-      img(src="images/bg4.png")
-  .track--info
-    .track--meta
-      h2.track--title #{track.name}
-      h3.track--artist= "by " + track.artist["#text"]
-    .track--link
-      button.btn.artistLink To Artist
+//-
+//-
+//- //h2.current Current Track
+//- .track.nowPlaying
+//-   .track--image
+//-     if track.image[3]['#text']
+//-       img(src=track.image[3]['#text'])
+//-     else
+//-       img(src="images/bg4.png")
+//-   .track--info
+//-     .track--meta
+//-       h2.track--title #{track.name}
+//-       h3.track--artist= "by " + track.artist["#text"]
+//-     .track--link
+//-       button.btn.artistLink To Artist

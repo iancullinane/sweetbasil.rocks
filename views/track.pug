@@ -1,35 +1,35 @@
-
-
-mixin track(track)
-  -if(track["@attr"])
-    h2.current Current Track
-    .track.nowPlaying
-      .track--image
-        +albumArt(track.image[3])
-      .track--info
-        .track--meta
-          h2.track--title #{track.name}
-          h3.track--artist= "by " + track.artist["#text"]
-        .track--link
-          button.btn.artistLink To Artist
-    h3.past Past tracks
-
-  -else
-    .track
-      .track--image
-        +albumArt(track.image[3])
-      .track--info
-        .track--meta
-          h2.track--title #{track.name}
-          h3.track--artist= "by " + track.artist["#text"]
-          p.track--time !{moment.unix(track.date["uts"]).fromNow()}
-        .track--link
-          button.btn.artistLink To Artist
-
-
-
-mixin albumArt( image )
-  -if(!image["#text"])
-    img(src="images/bg4.png")
-  -else
-    img(src=image['#text'])
+//-
+//-
+//- mixin track(track)
+//-   -if(track["@attr"])
+//-     h2.current Current Track
+//-     .track.nowPlaying
+//-       .track--image
+//-         +albumArt(track.image[3])
+//-       .track--info
+//-         .track--meta
+//-           h2.track--title #{track.name}
+//-           h3.track--artist= "by " + track.artist["#text"]
+//-         .track--link
+//-           button.btn.artistLink To Artist
+//-     h3.past Past tracks
+//-
+//-   -else
+//-     .track
+//-       .track--image
+//-         +albumArt(track.image[3])
+//-       .track--info
+//-         .track--meta
+//-           h2.track--title #{track.name}
+//-           h3.track--artist= "by " + track.artist["#text"]
+//-           p.track--time !{moment.unix(track.date["uts"]).fromNow()}
+//-         .track--link
+//-           button.btn.artistLink To Artist
+//-
+//-
+//-
+//- mixin albumArt( image )
+//-   -if(!image["#text"])
+//-     img(src="images/bg4.png")
+//-   -else
+//-     img(src=image['#text'])
