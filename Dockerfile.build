@@ -1,0 +1,34 @@
+FROM ubuntu
+#FROM node:alpine
+
+# Prep apt
+#RUN apt-get update
+#RUN apt-get install -y curl
+#RUN curl -sL https://deb.nodesource.com/setup_6.x — Node.js v6 Current | bash
+#RUN apk --update add make
+RUN apt-get update
+RUN apt-get install -y make curl
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
+
+WORKDIR /build
+ADD package.json package.json
+ADD npm-shrinkwrap.json npm-shrinkwrap.json
+RUN npm install
+
+# Install python reqs part 1
+#ADD Makefile Makefile
+
+# Install front end runtime dependencies part 1
+ENV PATH="./node_modules/.bin:${PATH}"
+
+
+
+ADD .babelrc .babelrc
+ADD ./views/ views
+ADD ./app/ app
+ADD ./routes/ routes
+ADD Makefile Makefile
+
+#RUN make client
+CMD ["make","client"]
