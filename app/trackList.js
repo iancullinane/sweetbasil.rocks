@@ -14,7 +14,7 @@ export default class TrackList extends Component {
       page: 1,
       tracks: this.props.list,
     }
-    console.log("Rendering page: " + this.state.page);
+    //console.log("Rendering page: " + this.state.page);
   }
 
   _setTracks(toAppend){
@@ -42,6 +42,7 @@ export default class TrackList extends Component {
       <div>
         <div id="trackRiver">{this.state.tracks}</div>
         <button className='btn more-btn' onClick={()=>this._incrementPage()}>more tracks</button>
+        <div className='space'></div>
         {/*<div className='btn more-btn'>{this.state.page}</div>}
         {<button className='btn more-btn' onClick={()=>this._incrementPage()}>+</button>*/}
 

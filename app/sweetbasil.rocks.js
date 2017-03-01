@@ -68,6 +68,7 @@ var more_info = document.getElementById("more_info");
 more_info.addEventListener('click', ()=> {
   let info_div = document.getElementById("info");
   info_div.style.display = info_div.style.display !== 'block' ? 'block' : "none";
+  more_info.textContent = more_info.textContent !== 'more info' ? 'more info' : 'less info';
 })
 
 
@@ -82,7 +83,7 @@ more_info.addEventListener('click', ()=> {
 /*
  	Redraw when a resize is complete
 */
-var resizeId;
-$(window).resize(function() {
-  console.log("Fire delayed page resize script")
-});
+// var resizeId;
+// $(window).resize(function() {
+//   console.log("Fire delayed page resize script")
+// });
