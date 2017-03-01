@@ -33,6 +33,8 @@
 
 #main
   display: flex
+  margin-bottom: 10px
+  padding-right 10px
   //flex-direction: row
 
   @media small {flex-direction: column}
@@ -48,14 +50,14 @@
 
 
 #info
-
+  display: none
+  
   h2,
   h4
     font-family: roboto
 
   p
     font-family: work-sans
-  display: none
 
 .info--box
   @extend .box
@@ -107,3 +109,16 @@
   font-family: roboto;
   font-size: 20px;
   width: 100%;
+
+.more-btn:focus
+  outline: none;
+  color white
+
+#more_info:focus {
+  outline: none;
+  color white
+}
+
+.btn-track {
+  align-self: flex-end
+}

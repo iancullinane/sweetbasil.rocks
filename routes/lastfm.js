@@ -30,9 +30,9 @@ class LastFmAPI{
     return lastfmUrl + query.stringify(q);
   };
 
-  test(){
-    console.log("test");
-  }
+  //test(){
+  //  console.log("test");
+  //}
 
   getArtistByID(id, callback){
     let options = options_get_artist;
@@ -63,7 +63,6 @@ class LastFmAPI{
 
   getRecentTracksByPage(page, callback){
     let options = options_get_recent;
-    console.log("getting page: " + page);
     options.limit = 10;
     options.page = page;
     options.method = "user.getRecentTracks";
