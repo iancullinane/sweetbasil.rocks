@@ -10,15 +10,15 @@ var lastfmUrl = 'http://ws.audioscrobbler.com/2.0/?';
 var options_get_recent = {
   method: "user.getRecentTracks",
   limit: "10",
-  user: 'ianpants',
-  api_key: "57ee3318536b23ee81d6b27e36997cde",
+  user: '<user>',
+  api_key: "<key>",
   format: "json"
 };
 
 var options_get_artist = {
   method: "artist.getInfo",
-  user: 'ianpants',
-  api_key: "57ee3318536b23ee81d6b27e36997cde",
+  user: '<user>',
+  api_key: "<key>",
   format: "json"
 
 };
