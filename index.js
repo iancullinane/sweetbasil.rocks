@@ -13,7 +13,10 @@ app.set('view engine', 'pug');
 app.locals.config = config;
 app.locals.moment = moment;
 
+
+
 app.use('/', route_handler);
 
+console.log("App server loaded");
 console.log('Listening on 8888');
 app.listen(8888);

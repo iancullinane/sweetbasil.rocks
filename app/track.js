@@ -35,7 +35,7 @@ class Track extends Component {
 
 
   _artist_info_toggle(){
-   lastfm.getArtistByID(this.props.track.artist.mbid, (returned)=>{
+    lastfm.getArtistByID(this.props.track.artist.mbid, (returned)=>{
      if(!this.state.artist_more){
        this.setState({artist_more: [this.props.track.artist['#text'], returned.artist.bio.summary] });
      } else {
@@ -54,7 +54,7 @@ class Track extends Component {
     if(track.image[3]['#text']){
       return track.image[3]['#text']
     } else {
-      return "http://placekitten.com/g/170/170"
+      return "/images/cassette_tape_pixel.png"
     }
   }
 

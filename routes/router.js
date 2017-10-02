@@ -7,7 +7,7 @@ var router = express.Router();
 
 router.use((req, res, next)=>{
   lastfm.getRecentTracks((data, err) => {
-    if (err) { return next(err); };
+    if (err) { console.log("error"); };
     res.data = data;
     next();
     //res.render('index', {data: data});
